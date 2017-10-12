@@ -9,6 +9,6 @@ is has not official API for .NET apps.
   just install the .msi file to the Windows directory.
 
 ## Compiling main.cs:
-```
-mcs main.cs -out:Test.cs
+```sh
+mcs main.cs -out:Test.exe
 ```
