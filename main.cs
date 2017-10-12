@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace DocToPdf
 {
@@ -19,7 +20,8 @@ namespace DocToPdf
                 case PlatformID.Unix:
                     return "/usr/bin/soffice";
                 case PlatformID.Win32NT:
-                    return Environment.CurrentDirectory + "\\Windows\\program\\soffice.exe";
+                    string binaryDirectory = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                    return binaryDirectory + "\\Windows\\program\\soffice.exe";
                 default:
                     throw new PlatformNotSupportedException	("Your OS is not supported");
             }
