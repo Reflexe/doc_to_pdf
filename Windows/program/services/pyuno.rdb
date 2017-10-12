@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<components xmlns="http://openoffice.org/2010/uno-components"><component loader="com.sun.star.loader.SharedLibrary" environment="msci" prefix="pythonloader" uri="vnd.sun.star.expand:$LO_LIB_DIR/pythonloaderlo.dll"><implementation name="org.openoffice.comp.pyuno.Loader"><service name="com.sun.star.loader.Python"/></implementation></component></components>

@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.16.1 -->
+<interface>
+  <!-- interface-requires LibreOffice 1.0 -->
+  <requires lib="gtk+" version="3.0"/>
+  <object class="GtkAdjustment" id="adjustment1">
+    <property name="upper">100</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adjustment2">
+    <property name="upper">360</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkGrid" id="AreaPropertyPanel">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="row_homogeneous">True</property>
+    <property name="column_homogeneous">True</property>
+    <child>
+      <object class="GtkBox" id="box1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="border_width">6</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">12</property>
+        <child>
+          <object class="GtkGrid" id="grid2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="hexpand">True</property>
+            <property name="row_spacing">6</property>
+            <property name="column_spacing">6</property>
+            <child>
+              <object class="GtkLabel" id="filllabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="has_tooltip">True</property>
+                <property name="tooltip_text" translatable="yes">Fill:</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">_Fill:</property>
+                <property name="use_underline">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox" id="box8">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="hexpand">True</property>
+                <child>
+                  <object class="sfxlo-SidebarToolBox" id="selectcolor">
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkMenuToolButton" id="color">
+                        <property name="width_request">105</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="has_tooltip">True</property>
+                        <property name="tooltip_text" translatable="yes">Select the color to apply.</property>
+                        <property name="action_name">.uno:FillColor</property>
+                        <property name="use_underline">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="homogeneous">True</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="svxlo-SvxFillAttrBox" id="fillattr">
+                    <property name="can_focus">False</property>
+                    <property name="has_tooltip">True</property>
+                    <property name="tooltip_text" translatable="yes">Select the effect to apply.</property>
+                    <accessibility>
+                      <relation type="labelled-by" target="filllabel"/>
+                    </accessibility>
+                    <child internal-child="accessible">
+                      <object class="AtkObject" id="fillattr-atkobject">
+                        <property name="AtkObject::accessible-name" translatable="yes">Hatching/Bitmap</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="svxcorelo-SvxColorListBox" id="fillgrad1">
+                    <property name="can_focus">False</property>
+                    <property name="has_tooltip">True</property>
+                    <property name="tooltip_text" translatable="yes">Fill gradient from.</property>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">1</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="svxlo-SvxFillTypeBox" id="fillstyle">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="has_tooltip">True</property>
+                <property name="tooltip_text" translatable="yes">Select the fill type to apply.</property>
+                <property name="entry_text_column">0</property>
+                <property name="id_column">1</property>
+                <accessibility>
+                  <relation type="labelled-by" target="fillstyle"/>
+                </accessibility>
+                <child internal-child="accessible">
+                  <object class="AtkObject" id="fillstyle-atkobject">
+                    <property name="AtkObject::accessible-name" translatable="yes">Fill Type</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="svxcorelo-SvxColorListBox" id="fillgrad2">
+                <property name="can_focus">False</property>
+                <property name="has_tooltip">True</property>
+                <property name="tooltip_text" translatable="yes">Fill gradient to.</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">2</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox" id="box2">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkComboBoxText" id="gradientstyle">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="tooltip_text" translatable="yes">Select the gradient style.</property>
+                    <items>
+                      <item translatable="yes">Linear</item>
+                      <item translatable="yes">Axial</item>
+                      <item translatable="yes">Radial</item>
+                      <item translatable="yes">Ellipsoid</item>
+                      <item translatable="yes">Quadratic</item>
+                      <item translatable="yes">Square</item>
+                    </items>
+                    <child internal-child="accessible">
+                      <object class="AtkObject" id="gradientstyle-atkobject">
+                        <property name="AtkObject::accessible-name" translatable="yes">Gradient Type</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="bmpimport">
+                    <property name="label" translatable="yes">_Import</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="use_underline">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">1</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSpinButton" id="gradangle:0degrees">
+                <property name="can_focus">True</property>
+                <property name="tooltip_text" translatable="yes">Select the gradient angle.</property>
+                <property name="adjustment">adjustment2</property>
+                <child internal-child="accessible">
+                  <object class="AtkObject" id="gradangle:0degrees-atkobject">
+                    <property name="AtkObject::accessible-name" translatable="yes">Gradient angle</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">2</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="transparencylabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="has_tooltip">True</property>
+                <property name="tooltip_text" translatable="yes">Transparency</property>
+                <property name="xalign">0</property>
+                <property name="label" translatable="yes">_Transparency:</property>
+                <property name="use_underline">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">3</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBoxText" id="transtype">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="has_tooltip">True</property>
+                <property name="tooltip_text" translatable="yes">Select the type of transparency to apply.</property>
+                <items>
+                  <item translatable="yes">None</item>
+                  <item translatable="yes">Solid</item>
+                  <item translatable="yes">Linear</item>
+                  <item translatable="yes">Axial</item>
+                  <item translatable="yes">Radial</item>
+                  <item translatable="yes">Ellipsoid</item>
+                  <item translatable="yes">Quadratic</item>
+                  <item translatable="yes">Square</item>
+                </items>
+                <child internal-child="accessible">
+                  <object class="AtkObject" id="transtype-atkobject">
+                    <property name="AtkObject::accessible-name" translatable="yes">Transparency Type</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">3</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkToolbar" id="selectgradient">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <child>
+                  <object class="GtkMenuToolButton" id="gradient">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="has_tooltip">True</property>
+                    <property name="tooltip_text" translatable="yes">Specify the variation of gradient transparency.</property>
+                    <property name="hexpand">True</property>
+                    <property name="action_name">.uno:sidebargradient</property>
+                    <property name="use_underline">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="homogeneous">True</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">4</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkGrid" id="grid1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="column_spacing">6</property>
+            <child>
+              <object class="GtkScale" id="transparencyslider">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="tooltip_text" translatable="yes">Specify 0% for fully opaque through 100% for fully transparent.</property>
+                <property name="hexpand">True</property>
+                <property name="round_digits">1</property>
+                <property name="draw_value">False</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+                <property name="width">3</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSpinButton" id="settransparency:0%">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="has_tooltip">True</property>
+                <property name="tooltip_text" translatable="yes">Specify 0% for fully opaque through 100% for fully transparent.</property>
+                <property name="max_length">100</property>
+                <property name="invisible_char">•</property>
+                <property name="secondary_icon_activatable">False</property>
+                <property name="adjustment">adjustment1</property>
+                <property name="climb_rate">5</property>
+                <property name="numeric">True</property>
+                <child internal-child="accessible">
+                  <object class="AtkObject" id="settransparency:0%-atkobject">
+                    <property name="AtkObject::accessible-name" translatable="yes">Transparency</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">0</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">0</property>
+        <property name="width">1</property>
+        <property name="height">1</property>
+      </packing>
+    </child>
+  </object>
+  <object class="GtkSizeGroup" id="sizegroup1">
+    <property name="mode">both</property>
+    <widgets>
+      <widget name="selectcolor"/>
+      <widget name="fillattr"/>
+    </widgets>
+  </object>
+  <object class="GtkSizeGroup" id="sizegroup2">
+    <property name="ignore_hidden">True</property>
+    <widgets>
+      <widget name="filllabel"/>
+      <widget name="gradientstyle"/>
+      <widget name="bmpimport"/>
+      <widget name="gradangle:0degrees"/>
+      <widget name="transparencylabel"/>
+    </widgets>
+  </object>
+</interface>

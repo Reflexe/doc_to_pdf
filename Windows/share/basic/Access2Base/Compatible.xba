@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Compatible" script:language="StarBasic">REM =======================================================================================================================
+REM ===					The Access2Base library is a part of the LibreOffice project.									===
+REM ===					Full documentation is available on http://www.access2base.com									===
+REM =======================================================================================================================
+
+Option Compatible
+Option Explicit
+
+REM -----------------------------------------------------------------------------------------------------------------------
+Public Sub DebugPrint(ParamArray pvArgs() As Variant)
+
+&apos;Print arguments unconditionnally in console
+&apos;Arguments are separated by a TAB (simulated by spaces)
+&apos;Some pvArgs might be missing: a TAB is still generated
+
+Dim vVarTypes() As Variant, i As Integer
+Const cstTab = 5
+	On Local Error Goto Exit_Sub	&apos;	Never interrupt processing
+	Utils._SetCalledSub(&quot;DebugPrint&quot;)
+	vVarTypes = Utils._AddNumeric(Array(vbEmpty, vbNull, vbDate, vbString, vbBoolean, vbObject, vbVariant, vbByte, vbArray + vbByte))
+	
+	If UBound(pvArgs) &gt;= 0 Then
+		For i = 0 To UBound(pvArgs)
+			If Not Utils._CheckArgument(pvArgs(i), i + 1, vVarTypes(), , False) Then pvArgs(i) = &quot;[TYPE?]&quot;
+		Next i
+	End If
+
+Dim sOutput As String, sArg As String
+	sOutput = &quot;&quot;	
+	For i = 0 To UBound(pvArgs)
+		sArg = Replace(Utils._CStr(pvArgs(i), _A2B_.DebugPrintShort), &quot;\;&quot;, &quot;;&quot;)
+		&apos; Add argument to output
+		If i = 0 Then
+			sOutput = sArg
+		Else
+			sOutput = sOutput &amp; Space(cstTab - (Len(sOutput) Mod cstTab)) &amp; sArg
+		End If
+	Next i
+	
+	TraceLog(TRACEANY, sOutput, False)
+	
+Exit_Sub:
+	Utils._ResetCalledSub(&quot;DebugPrint&quot;)
+	Exit Sub
+End Sub			&apos;	DebugPrint		V0.9.5
+</script:module>

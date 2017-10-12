@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.18.3 -->
+<interface>
+  <requires lib="gtk+" version="3.0"/>
+  <requires lib="LibreOffice" version="1.0"/>
+  <object class="GtkAdjustment" id="adjustmentDegrees">
+    <property name="upper">359</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="adjustmentPercent">
+    <property name="upper">100</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkListStore" id="liststoreTYPE">
+    <columns>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+      <!-- column-name guint1 -->
+      <column type="guint"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">Linear</col>
+        <col id="1">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Axial</col>
+        <col id="1">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Radial</col>
+        <col id="1">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Ellipsoid</col>
+        <col id="1">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Quadratic</col>
+        <col id="1">0</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Square</col>
+        <col id="1">0</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkFrame" id="TransparencyTabPage">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="hexpand">True</property>
+    <property name="border_width">6</property>
+    <property name="label_xalign">0</property>
+    <property name="shadow_type">none</property>
+    <child>
+      <object class="GtkAlignment" id="alignment1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="hexpand">True</property>
+        <property name="top_padding">6</property>
+        <property name="left_padding">12</property>
+        <child>
+          <object class="GtkBox" id="box2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="hexpand">True</property>
+            <property name="spacing">18</property>
+            <child>
+              <object class="GtkBox" id="box1">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="valign">start</property>
+                <property name="orientation">vertical</property>
+                <property name="spacing">6</property>
+                <child>
+                  <object class="GtkGrid" id="grid1">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="row_spacing">6</property>
+                    <property name="column_spacing">12</property>
+                    <child>
+                      <object class="GtkRadioButton" id="RBT_TRANS_OFF">
+                        <property name="label" translatable="yes">_No transparency</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="xalign">0</property>
+                        <property name="image_position">bottom</property>
+                        <property name="active">True</property>
+                        <property name="draw_indicator">True</property>
+                        <property name="group">RBT_TRANS_LINEAR</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkRadioButton" id="RBT_TRANS_LINEAR">
+                        <property name="label" translatable="yes">_Transparency:</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="xalign">0</property>
+                        <property name="image_position">right</property>
+                        <property name="active">True</property>
+                        <property name="draw_indicator">True</property>
+                        <property name="group">RBT_TRANS_GRADIENT</property>
+                        <accessibility>
+                          <relation type="label-for" target="MTR_TRANSPARENT:0%"/>
+                        </accessibility>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkRadioButton" id="RBT_TRANS_GRADIENT">
+                        <property name="label" translatable="yes">_Gradient</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="xalign">0</property>
+                        <property name="active">True</property>
+                        <property name="draw_indicator">True</property>
+                        <property name="group">RBT_TRANS_OFF</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkSpinButton" id="MTR_TRANSPARENT:0%">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="invisible_char">•</property>
+                        <property name="adjustment">adjustmentPercent</property>
+                        <accessibility>
+                          <relation type="labelled-by" target="RBT_TRANS_LINEAR"/>
+                        </accessibility>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkGrid" id="gridGradient">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="row_spacing">6</property>
+                    <property name="column_spacing">12</property>
+                    <child>
+                      <object class="GtkSpinButton" id="MTR_TRGR_END_VALUE:0%">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="invisible_char">•</property>
+                        <property name="adjustment">adjustmentPercent</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkSpinButton" id="MTR_TRGR_START_VALUE:0%">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="invisible_char">•</property>
+                        <property name="adjustment">adjustmentPercent</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkSpinButton" id="MTR_TRGR_BORDER:0%">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="invisible_char">•</property>
+                        <property name="adjustment">adjustmentPercent</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkSpinButton" id="MTR_TRGR_ANGLE:0degree">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="invisible_char">•</property>
+                        <property name="adjustment">adjustmentDegrees</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkSpinButton" id="MTR_TRGR_CENTER_Y:0%">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="invisible_char">•</property>
+                        <property name="adjustment">adjustmentPercent</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkSpinButton" id="MTR_TRGR_CENTER_X:0%">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="invisible_char">•</property>
+                        <property name="adjustment">adjustmentPercent</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkComboBox" id="LB_TRGR_GRADIENT_TYPES">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="model">liststoreTYPE</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkAlignment" id="alignment2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="left_padding">12</property>
+                        <child>
+                          <object class="GtkLabel" id="FT_TRGR_TYPE">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="xalign">1</property>
+                            <property name="label" translatable="yes">Ty_pe:</property>
+                            <property name="use_underline">True</property>
+                            <property name="mnemonic_widget">LB_TRGR_GRADIENT_TYPES</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkAlignment" id="alignment3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="left_padding">12</property>
+                        <child>
+                          <object class="GtkLabel" id="FT_TRGR_CENTER_X">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="xalign">1</property>
+                            <property name="label" translatable="yes">Center _X:</property>
+                            <property name="use_underline">True</property>
+                            <property name="mnemonic_widget">MTR_TRGR_CENTER_X:0%</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkAlignment" id="alignment4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="left_padding">12</property>
+                        <child>
+                          <object class="GtkLabel" id="FT_TRGR_CENTER_Y">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="xalign">1</property>
+                            <property name="label" translatable="yes">Center _Y:</property>
+                            <property name="use_underline">True</property>
+                            <property name="mnemonic_widget">MTR_TRGR_CENTER_Y:0%</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkAlignment" id="alignment5">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="left_padding">12</property>
+                        <child>
+                          <object class="GtkLabel" id="FT_TRGR_ANGLE">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="xalign">1</property>
+                            <property name="label" translatable="yes">_Angle:</property>
+                            <property name="use_underline">True</property>
+                            <property name="mnemonic_widget">MTR_TRGR_ANGLE:0degree</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkAlignment" id="alignment6">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="left_padding">12</property>
+                        <child>
+                          <object class="GtkLabel" id="FT_TRGR_BORDER">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="xalign">1</property>
+                            <property name="label" translatable="yes">_Border:</property>
+                            <property name="use_underline">True</property>
+                            <property name="mnemonic_widget">MTR_TRGR_BORDER:0%</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkAlignment" id="alignment7">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="left_padding">12</property>
+                        <child>
+                          <object class="GtkLabel" id="FT_TRGR_START_VALUE">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="xalign">1</property>
+                            <property name="label" translatable="yes">_Start value:</property>
+                            <property name="use_underline">True</property>
+                            <property name="mnemonic_widget">MTR_TRGR_START_VALUE:0%</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkAlignment" id="alignment8">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="left_padding">12</property>
+                        <child>
+                          <object class="GtkLabel" id="FT_TRGR_END_VALUE">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="xalign">1</property>
+                            <property name="label" translatable="yes">_End value:</property>
+                            <property name="use_underline">True</property>
+                            <property name="mnemonic_widget">MTR_TRGR_END_VALUE:0%</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">6</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox" id="box3">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="valign">start</property>
+                <property name="margin_right">12</property>
+                <property name="hexpand">True</property>
+                <property name="orientation">vertical</property>
+                <property name="spacing">6</property>
+                <property name="homogeneous">True</property>
+                <child>
+                  <object class="svxlo-SvxXRectPreview" id="CTL_BITMAP_PREVIEW">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="hexpand">True</property>
+                    <property name="vexpand">True</property>
+                    <child internal-child="accessible">
+                      <object class="AtkObject" id="CTL_BITMAP_PREVIEW-atkobject">
+                        <property name="AtkObject::accessible-name" translatable="yes">Example</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="svxlo-SvxXRectPreview" id="CTL_TRANS_PREVIEW">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="hexpand">True</property>
+                    <property name="vexpand">True</property>
+                    <child internal-child="accessible">
+                      <object class="AtkObject" id="CTL_TRANS_PREVIEW-atkobject">
+                        <property name="AtkObject::accessible-name" translatable="yes">Example</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkBox" id="box4">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child type="label">
+      <object class="GtkLabel" id="FL_PROP">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="xalign">0</property>
+        <property name="label" translatable="yes">Area Transparency Mode</property>
+        <attributes>
+          <attribute name="weight" value="bold"/>
+        </attributes>
+      </object>
+    </child>
+  </object>
+  <object class="GtkSizeGroup" id="sizegroup2">
+    <property name="mode">both</property>
+    <property name="ignore_hidden">True</property>
+    <widgets>
+      <widget name="MTR_TRANSPARENT:0%"/>
+      <widget name="MTR_TRGR_END_VALUE:0%"/>
+      <widget name="MTR_TRGR_START_VALUE:0%"/>
+      <widget name="MTR_TRGR_BORDER:0%"/>
+      <widget name="MTR_TRGR_ANGLE:0degree"/>
+      <widget name="MTR_TRGR_CENTER_Y:0%"/>
+      <widget name="MTR_TRGR_CENTER_X:0%"/>
+      <widget name="LB_TRGR_GRADIENT_TYPES"/>
+    </widgets>
+  </object>
+  <object class="GtkSizeGroup" id="sizegroup3">
+    <property name="mode">both</property>
+    <property name="ignore_hidden">True</property>
+    <widgets>
+      <widget name="box1"/>
+      <widget name="box3"/>
+    </widgets>
+  </object>
+  <object class="GtkSizeGroup" id="sizegroup4">
+    <widgets>
+      <widget name="RBT_TRANS_OFF"/>
+      <widget name="RBT_TRANS_LINEAR"/>
+      <widget name="RBT_TRANS_GRADIENT"/>
+      <widget name="alignment2"/>
+      <widget name="alignment3"/>
+      <widget name="alignment4"/>
+      <widget name="alignment5"/>
+      <widget name="alignment6"/>
+      <widget name="alignment7"/>
+      <widget name="alignment8"/>
+    </widgets>
+  </object>
+</interface>

@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * This file is part of the LibreOffice project.
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ *
+-->
+<!--
+ * To get glade to use this, put this .xml into a dir e.g. ~/glade
+ * and
+ * export GLADE_CATALOG_SEARCH_PATH=~/glade
+ * for system-wide installation copy into /usr/share/glade/catalogs/
+-->
+<glade-catalog name="LibreOffice" domain="glade-3" depends="gtk+" version="1.0">
+  <glade-widget-classes>
+    <glade-widget-class title="Bookmarks Box" name="sfxlo-BookmarksBox" generic-name="BookmarksBox" parent="GtkComboBoxText" icon-name="widget-gtk-comboboxtext"/>
+    <glade-widget-class title="Index Box" name="sfxlo-IndexBox" generic-name="IndexBox" parent="GtkComboBoxText" icon-name="widget-gtk-comboboxtext"/>
+    <glade-widget-class title="Search Box" name="sfxlo-SearchBox" generic-name="SearchBox" parent="GtkComboBoxText" icon-name="widget-gtk-comboboxtext"/>
+    <glade-widget-class title="Search Results Box" name="sfxlo-SearchResultsBox" generic-name="SearchResultsBox" parent="GtkComboBoxText" icon-name="widget-gtk-comboboxtext"/>
+    <glade-widget-class title="Font PickListBox" name="smlo-SmFontPickListBox" generic-name="SmFontPickListBox" parent="GtkComboBoxText" icon-name="widget-gtk-comboboxtext"/>
+    <glade-widget-class title="Address Control" name="swuilo-SwAddressControlImpl" generic-name="SwAddressControlImpl" parent="GtkComboBoxText" icon-name="widget-gtk-comboboxtext"/>
+    <glade-widget-class title="Thesaurus View" name="cuilo-ThesaurusAlternativesCtrl" generic-name="ThesaurusAlternativesCtrl" parent="GtkTextView" icon-name="widget-gtk-textview"/>
+    <glade-widget-class title="Spelling View" name="cuilo-SentenceEditWindow" generic-name="SentenceEditWindow" parent="GtkTextView" icon-name="widget-gtk-textview"/>
+    <glade-widget-class title="Hex Color Control" name="svxcorelo-HexColorControl" generic-name="Hex Color Control" parent="GtkEntry" icon-name="widget-gtk-textentry"/>
+    <glade-widget-class title="Thesaurus Edit" name="cuilo-ReplaceEdit" generic-name="ReplaceEdit" parent="GtkEntry" icon-name="widget-gtk-textentry"/>
+    <glade-widget-class title="Condition Edit" name="rptuilo-ConditionField" generic-name="ConditionEdit" parent="GtkEntry" icon-name="widget-gtk-comboboxtext"/>
+    <glade-widget-class title="Hyphen Edit" name="cuilo-HyphenEdit" generic-name="HyphenEdit" parent="GtkEntry" icon-name="widget-gtk-textentry"/>
+    <glade-widget-class title="OSQL NameEdit" name="dbulo-OSQLNameEdit" generic-name="OSQLNameEdit" parent="GtkEntry" icon-name="widget-gtk-textentry"/>
+    <glade-widget-class title="CharSetListBox" name="dbulo-CharSetListBox" generic-name="CharSetListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox"/>
+    <glade-widget-class title="ConnectionURLEdit" name="dbulo-ConnectionURLEdit" generic-name="ConnectionURLEdit" parent="GtkEntry" icon-name="widget-gtk-entry"/>
+
+    <glade-widget-class title="VclComboBoxText" name="VclComboBoxText" generic-name="ComboBoxText" parent="GtkComboBoxText" icon-name="widget-gtk-comboboxtext">
+      <properties>
+        <property save="True" query="False" id="dropdown" default="True" name="Use DropDown">
+          <parameter-spec>
+            <type>GParamBoolean</type>
+          </parameter-spec>
+        </property>
+        <property save="True" query="False" id="max-width-chars" default="-1" name="Maximum Width in Characters">
+          <parameter-spec>
+            <type>GParamInt</type>
+            <min>-1</min>
+          </parameter-spec>
+          <tooltip>The desired maximum width of the ComboBox, in characters</tooltip>
+        </property>
+      </properties>
+    </glade-widget-class>
+
+    <glade-widget-class title="VclComboBoxNumeric" name="VclComboBoxNumeric" generic-name="ComboBoxNumeric" parent="VclComboBoxText" icon-name="widget-gtk-comboboxtext">
+      <properties>
+        <property save="True" query="False" id="adjustment" name="Adjustment">
+          <parameter-spec>
+            <type>GParamObject</type>
+            <value-type>GtkAdjustment</value-type>
+          </parameter-spec>
+          <tooltip>List of widgets in this group</tooltip>
+        </property>
+      </properties>
+    </glade-widget-class>
+
+    <glade-widget-class title="Color ListBox" name="svxcorelo-SvxColorListBox" generic-name="Color ListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox">
+    </glade-widget-class>
+
+    <glade-widget-class title="Gradient ListBox" name="svxlo-GradientLB" generic-name="GradientListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox">
+      <properties>
+        <property save="True" query="False" id="dropdown" default="True" name="Use DropDown">
+          <parameter-spec>
+            <type>GParamBoolean</type>
+          </parameter-spec>
+        </property>
+      </properties>
+    </glade-widget-class>
+    <glade-widget-class title="Hatching ListBox" name="svxlo-HatchingLB" generic-name="HatchingListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox">
+      <properties>
+        <property save="True" query="False" id="dropdown" default="True" name="Use DropDown">
+          <parameter-spec>
+            <type>GParamBoolean</type>
+          </parameter-spec>
+        </property>
+      </properties>
+    </glade-widget-class>
+    <glade-widget-class title="Bitmap ListBox" name="svxlo-BitmapLB" generic-name="BitmapListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox">
+      <properties>
+        <property save="True" query="False" id="dropdown" default="True" name="Use DropDown">
+          <parameter-spec>
+            <type>GParamBoolean</type>
+          </parameter-spec>
+        </property>
+      </properties>
+    </glade-widget-class>
+    <glade-widget-class title="Font Name ListBox" name="svtlo-FontNameBox" generic-name="Font name ListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox">
+      <properties>
+        <property save="True" query="False" id="dropdown" default="True" name="Use DropDown">
+          <parameter-spec>
+            <type>GParamBoolean</type>
+          </parameter-spec>
+        </property>
+      </properties>
+    </glade-widget-class>
+
+    <glade-widget-class title="Font Size ListBox" name="svtlo-FontSizeBox" generic-name="Font Size ListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox">
+      <properties>
+        <property save="True" query="False" id="dropdown" default="True" name="Use DropDown">
+          <parameter-spec>
+            <type>GParamBoolean</type>
+          </parameter-spec>
+        </property>
+      </properties>
+    </glade-widget-class>
+
+    <glade-widget-class title="Svx Line End ListBox" name="svxlo-LineEndLB" generic-name="Line End ListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox">
+      <properties>
+        <property save="True" query="False" id="dropdown" default="True" name="Use DropDown">
+          <parameter-spec>
+            <type>GParamBoolean</type>
+          </parameter-spec>
+        </property>
+      </properties>
+    </glade-widget-class>
+
+    <glade-widget-class title="Svx Line ListBox" name="svxlo-LineLB" generic-name="Line ListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox">
+      <properties>
+        <property save="True" query="False" id="dropdown" default="True" name="Use DropDown">
+          <parameter-spec>
+            <type>GParamBoolean</type>
+          </parameter-spec>
+        </property>
+      </properties>
+    </glade-widget-class>
+
+    <glade-widget-class title="Svt Line ListBox" name="svtlo-LineListBox" generic-name="Line ListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox">
+      <properties>
+        <property save="True" query="False" id="dropdown" default="True" name="Use DropDown">
+          <parameter-spec>
+            <type>GParamBoolean</type>
+          </parameter-spec>
+        </property>
+      </properties>
+    </glade-widget-class>
+
+    <glade-widget-class title="Font ListBox" name="svtlo-FontStyleBox" generic-name="FontStyleBox" parent="GtkComboBox" icon-name="widget-gtk-combobox">
+      <properties>
+        <property save="True" query="False" id="dropdown" default="True" name="Use DropDown">
+          <parameter-spec>
+            <type>GParamBoolean</type>
+          </parameter-spec>
+        </property>
+      </properties>
+    </glade-widget-class>
+
+    <glade-widget-class title="Text Encoding ListBox" name="svxlo-SvxTextEncodingBox" generic-name="TextEncodingBox" parent="GtkComboBox" icon-name="widget-gtk-combobox">
+      <properties>
+        <property save="True" query="False" id="dropdown" default="True" name="Use DropDown">
+          <parameter-spec>
+            <type>GParamBoolean</type>
+          </parameter-spec>
+        </property>
+      </properties>
+    </glade-widget-class>
+
+    <glade-widget-class title="Limit ListBox" name="dbulo-LimitBox" generic-name="LimitBox" parent="GtkComboBox" icon-name="widget-gtk-combobox"/>
+
+    <glade-widget-class title="OSQL NameComboBox" name="dbulo-OSQLNameComboBox" generic-name="OSQLNameComboBox" parent="GtkComboBox" icon-name="widget-gtk-combobox"/>
+
+    <glade-widget-class title="Font Preview" name="svxlo-SvxFontPrevWindow" generic-name="Font Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea">
+      <properties>
+        <property id="text" name="Label">
+          <parameter-spec>
+            <type>GParamString</type>
+          </parameter-spec>
+        </property>
+      </properties>
+    </glade-widget-class>
+
+    <glade-widget-class title="Scan Preview" name="scnlo-ScanPreview" generic-name="Scan Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+
+    <glade-widget-class title="Gamma Grid" name="scnlo-GridWindow" generic-name="Gamma Grid Widget" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+
+    <glade-widget-class title="Token Window" name="swuilo-SwTokenWindow" generic-name="Token Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Template Preview Window" name="sfxlo-SfxPreviewWin" generic-name="Template Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Template Local View" name="sfxlo-TemplateLocalView" generic-name="Template Local View" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+
+    <glade-widget-class title="Mark Preview" name="swuilo-SwMarkPreview" generic-name="Mark Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Show Math Symbol" name="smlo-SmShowSymbol" generic-name="Show Math Symbol" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Show Math Char" name="smlo-SmShowChar" generic-name="Show Math Char" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Gallery Preview" name="svxcorelo-GalleryPreview" generic-name="Gallery Preview" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Show Math Font" name="smlo-SmShowFont" generic-name="Show Math Font" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Math Symbol Selection" name="smlo-SmShowSymbolSet" generic-name="Math Symbol Selection" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Math Char Selection" name="svxlo-SvxShowCharSet" generic-name="Math Char Selection" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Number Preview" name="cuilo-SvxNumberPreview" generic-name="Number Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Graphic Preview" name="cuilo-GraphicPreviewWindow" generic-name="Graphic Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Color Field Control" name="cuilo-ColorFieldControl" generic-name="Color Field Control" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Color Slider Control" name="cuilo-ColorSliderControl" generic-name="Color Slider Control" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Color Preview Control" name="cuilo-ColorPreviewControl" generic-name="Color Preview Control" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Html Attribute Preview" name="sduilo-SdHtmlAttrPreview" generic-name="Html Attribute Preview" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Document Preview Window" name="sdlo-SdDocPreviewWin" generic-name="Document Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Writer Number Preview" name="swuilo-NumberingPreview" generic-name="Writer Number Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Background Preview" name="cuilo-BackgroundPreview" generic-name="Background Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Rectangle Preview" name="svxlo-SvxXRectPreview" generic-name="Rectangle Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="SvxXLinePreview" name="svxlo-SvxXLinePreview" generic-name="Line Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="SvxXMeasurePreview" name="svxlo-SvxXMeasurePreview" generic-name="Dimension Line Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="SvxXConnectionPreview" name="svxlo-SvxXConnectionPreview" generic-name="Connector Line Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Shadow Preview" name="svxlo-SvxXShadowPreview" generic-name="Shadow Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Bitmap Pixel Editor" name="svxlo-SvxPixelCtl" generic-name="Bitmap Pixel Editor" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Svx 3D Light Control" name="svxlo-SvxLightCtl3D" generic-name="3D Light Control" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Svx 3D Preview Control" name="svxlo-Svx3DPreviewControl" generic-name="3D Preview Control" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Frame Selector" name="svxlo-SvxFrameSelector" generic-name="Frame Border Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="MultiLine Edit" name="svtlo-MultiLineEditSyntaxHighlight" generic-name="MultiLineEdit" parent="GtkTextView" icon-name="widget-gtk-textview"/>
+    <glade-widget-class title="AutoComplete MultiLine Edit" name="cuilo-AutoCompleteMultiListBox" generic-name="MultiLineEdit" parent="GtkTextView" icon-name="widget-gtk-textview"/>
+    <glade-widget-class title="SvtFormattedField" name="svtlo-FormattedField" generic-name="Formatted Field" parent="GtkSpinButton" icon-name="widget-gtk-textentry"/>
+    <glade-widget-class title="Address MultiLine Edit" name="swuilo-AddressMultiLineEdit" generic-name="AddressMultiLineEdit" parent="GtkTextView" icon-name="widget-gtk-textview"/>
+    <glade-widget-class title="Cui Custom MultiLine Edit" name="cuilo-CuiCustomMultilineEdit" generic-name="CuiCustomMultiLineEdit" parent="GtkTextView" icon-name="widget-gtk-textview"/>
+    <glade-widget-class title="LicenseView" name="deploymentgui-LicenseView" generic-name="LicenseView" parent="GtkTextView" icon-name="widget-gtk-textview"/>
+    <glade-widget-class title="SvtValueSet" name="svtlo-ValueSet" generic-name="Set of Value Options" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Document Info Preview" name="svtlo-ODocumentInfoPreview" generic-name="Document Info Preview" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="SvxColorValueSet" name="svxcorelo-SvxColorValueSet" generic-name="Set of Value Options" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="SvxPresetListBox" name="svxcorelo-SvxPresetListBox" generic-name="Set of Value Options" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="SwColumnValueSet" name="swuilo-ColumnValueSet" generic-name="Set of Value Options" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="TableValueSet" name="sdlo-TableValueSet" generic-name="Set of Table Value Options" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="ScTabBgColorValueSet" name="scuilo-ScTabBgColorValueSet" generic-name="Set of Tab Color Options" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="CsvTableBox" name="sclo-ScCsvTableBox" generic-name="CSV Table Box" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Table Container" name="svtlo-SvSimpleTableContainer" generic-name="Simple Table Container" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="File View" name="svtlo-SvtFileView" generic-name="File View" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Check List Box" name="svxcorelo-SvxCheckListBox" generic-name="Check List Box" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="SwDBTreeList" name="swlo-SwDBTreeList" generic-name="SwDBTreeList" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Macro EventListBox" name="cuilo-MacroEventListBox" generic-name="Macro EventListBox" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="ConfigGroup ListBox" name="cuilo-SfxConfigGroupListBox" generic-name="ConfigGroup ListBox" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="SfxAccCfgTabListBox" name="cuilo-SfxAccCfgTabListBox" generic-name="AccCfgTabListBox" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="ConfigGroupFunction ListBox" name="cuilo-SfxConfigFunctionListBox" generic-name="ConfigGroupFunction ListBox" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Paragraph Preview" name="svxlo-SvxParaPrevWindow" generic-name="Paragraph Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Page Preview" name="svxlo-SvxPageWindow" generic-name="Page Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Page Preview" name="swlo-SwPageGridExample" generic-name="Grid Page Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Page Preview" name="swlo-SwColExample" generic-name="Page Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Page Preview" name="swlo-SwColumnOnlyExample" generic-name="Page Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Table Preview" name="swuilo-AutoFmtPreview" generic-name="Table Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Calc Table Preview" name="sclo-ScAutoFmtPreview" generic-name="Calc Table Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Caption Preview" name="swuilo-SwCaptionPreview" generic-name="Caption Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Drop Caps Preview" name="swuilo-SwDropCapsPict" generic-name="Drop Caps Preview Window" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Extension List" name="deploymentgui-ExtensionBox" generic-name="Extensions List" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Extension List With Buttons" name="deploymentgui-ExtBoxWithBtns" generic-name="Extensions List With Buttons" parent="deploymentgui-ExtensionBox" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Path List" name="xsltdlglo-SvxPathControl" generic-name="Path List" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Ruby Preview" name="svxlo-RubyPreview" generic-name="Ruby Preview" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Print Preview" name="vcllo-PrintPreviewWindow" generic-name="Print Preview" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="NUP Preview" name="vcllo-ShowNupOrderWindow" generic-name="NUP Preview" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Label Preview" name="swuilo-SwLabPreview" generic-name="Label Preview" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Envelope Preview" name="swuilo-SwEnvPreview" generic-name="Envelope Preview" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Frame Preview" name="svxlo-SvxSwFrameExample" generic-name="Frame Preview" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Presentation Preview" name="sduilo-PresLayoutPreview" generic-name="Presentation Preview" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Address Preview" name="swlo-SwAddressPreview" generic-name="Address Preview" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Assign Fields Control" name="swuilo-SwAssignFieldsControl" generic-name="Assign Fields Control" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Rectangle Control" name="svxlo-SvxRectCtl" generic-name="Rectangle Control" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Emboss Control" name="cuilo-EmbossControl" generic-name="Emboss Control" parent="svxlo-SvxRectCtl" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Graph Control" name="svxlo-GraphCtrl" generic-name="Graph Control" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Frame Direction ListBox" name="svxlo-FrameDirectionListBox" generic-name="FrameDirectionListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox"/>
+    <glade-widget-class title="Text Direction ListBox" name="chartcontrollerlo-TextDirectionListBox" generic-name="TextDirectionListBox" parent="svxlo-FrameDirectionListBox" icon-name="widget-gtk-combobox"/>
+    <glade-widget-class title="Chart Light Button" name="chartcontrollerlo-LightButton" generic-name="ChartLightButton" parent="GtkButton" icon-name="widget-gtk-button"/>
+    <glade-widget-class title="Numbering Type ListBox" name="swlo-SwNumberingTypeListBox" generic-name="NumberingTypeListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox"/>
+    <glade-widget-class title="Bookmark Combo" name="swuilo-BookmarkCombo" generic-name="BookmarkComboBox" parent="GtkComboBox" icon-name="widget-gtk-combobox"/>
+    <glade-widget-class title="Category Edit" name="swuilo-FEdit" generic-name="CategoryEdit" parent="GtkEntry" icon-name="widget-gtk-textentry"/>
+    <glade-widget-class title="Ruby Edit" name="svxlo-RubyEdit" generic-name="RubyEdit" parent="GtkEntry" icon-name="widget-gtk-textentry"/>
+    <glade-widget-class title="Dictionary Edit" name="cuilo-SvxDictEdit" generic-name="SvxDictEdit" parent="GtkEntry" icon-name="widget-gtk-textentry"/>
+    <glade-widget-class title="AutoCorrect Edit" name="cuilo-AutoCorrEdit" generic-name="AutoCorrEdit" parent="GtkEntry" icon-name="widget-gtk-textentry"/>
+    <glade-widget-class title="Glossary List" name="swuilo-SwGlossaryGroupTLB" generic-name="Glossary List" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Font List" name="svxlo-SvxFontListBox" generic-name="Font List" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Macro Library" name="basctllo-TreeListBox" generic-name="Macro Library List" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Extended Macro Library" name="basctllo-ExtTreeListBox" generic-name="Extended Macro Library List" parent="basctllo-TreeListBox" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Tree List" name="svtlo-SvTreeListBox" generic-name="Tree List" parent="GtkTreeView" icon-name="widget-gtk-treeview">
+      <properties>
+        <property save="True" query="False" id="min-width-chars" default="-1" name="Minimum Width in Characters">
+          <parameter-spec>
+            <type>GParamInt</type>
+            <min>-1</min>
+          </parameter-spec>
+          <tooltip>The desired minimum width of the SvTreeListBox, in characters</tooltip>
+        </property>
+      </properties>
+    </glade-widget-class>
+
+    <glade-widget-class title="Chart Series ListBox" name="chartcontrollerlo-SeriesListBox" generic-name="Chart Series ListBox" parent="svtlo-SvTreeListBox" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Hyperlink Tree Box" name="cuilo-SvxHlmarkTreeLBox" generic-name="Hyperlink Tree Box" parent="svtlo-SvTreeListBox" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Content List Box" name="sfxlo-ContentListBox" generic-name="Content List Box" parent="svtlo-SvTreeListBox" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="DD ListBox" name="swuilo-DDListBox" generic-name="DD ListBox" parent="svtlo-SvTreeListBox" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Animation ListBox" name="sdlo-CustomAnimationList" generic-name="Animation ListBox" parent="svtlo-SvTreeListBox" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Tab List" name="svtlo-SvTabListBox" generic-name="Tab List" parent="svtlo-SvTreeListBox" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="CheckBox List" name="basctllo-CheckBox" generic-name="CheckBox List" parent="svtlo-SvTabListBox" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="SwIdxTreeListBox" name="swuilo-SwIdxTreeListBox" generic-name="SwIdxTreeListBox" parent="svtlo-SvTreeListBox" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Tooltip Tree List" name="swuilo-SwFldRefTreeListBox" generic-name="Tooltip Tree List" parent="svtlo-SvTreeListBox" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Tab Order ListBox" name="pcrlo-TabOrderListBox" generic-name="TabOrderListBox" parent="svtlo-SvTreeListBox" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Page Objs ListBox" name="sdlo-SdPageObjsTLB" generic-name="SdPageObjsTLB" parent="svtlo-SvTreeListBox" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Page List Control" name="sduilo-SdPageListControl" generic-name="Page List Control" parent="svtlo-SvTreeListBox" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Checked Tree List" name="svxlo-SvxCheckListBox" generic-name="Checked Tree List" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Glossary Tree List" name="swuilo-SwGlTreeListBox" generic-name="Glossary Tree List" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Pivot Table List" name="sclo-ScPivotLayoutTreeList" generic-name="Pivot Table List" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Pivot Table Label List" name="sclo-ScPivotLayoutTreeListLabel" generic-name="Pivot Table Label List" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Pivot Table Data List" name="sclo-ScPivotLayoutTreeListData" generic-name="Pivot Table Data List" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Dial Control" name="svxlo-DialControl" generic-name="Dial Control" parent="GtkSpinner" icon-name="widget-gtk-spinner"/>
+    <glade-widget-class title="Sidebar Dial Control" name="svxlo-SidebarDialControl" generic-name="Sidebar Dial Control" parent="GtkSpinner" icon-name="widget-gtk-spinner"/>
+    <glade-widget-class title="Relative Numeric Field" name="svxlo-SvxRelativeField" generic-name="Relative Numeric Field" parent="GtkSpinButton" icon-name="widget-gtk-spinbutton"/>
+
+    <glade-widget-class title="Calc Row SpinButton" name="sclo-RowEdit" generic-name="Calc Row SpinButton" parent="GtkSpinButton" icon-name="widget-gtk-spinbutton"/>
+    <glade-widget-class title="Calc Column SpinButton" name="sclo-ColumnEdit" generic-name="Calc Column SpinButton" parent="GtkSpinButton" icon-name="widget-gtk-spinbutton"/>
+
+    <glade-widget-class title="SvtURLBox" name="svtlo-SvtURLBox" generic-name="URLBox" parent="VclComboBoxText" icon-name="widget-gtk-comboboxtext"/>
+
+    <glade-widget-class title="OFileURLControl" name="svtlo-OFileURLControl" generic-name="URLBox" parent="svtlo-SvtURLBox" icon-name="widget-gtk-comboboxtext"/>
+
+    <glade-widget-class title="SelectionListBox" name="swuilo-SelectionListBox" generic-name="SelectionListBox" parent="VclComboBoxText" icon-name="widget-gtk-comboboxtext"/>
+
+    <glade-widget-class title="CaptionComboBox" name="swuilo-CaptionComboBox" generic-name="CaptionComboBox" parent="VclComboBoxText" icon-name="widget-gtk-comboboxtext"/>
+
+    <glade-widget-class title="PropertyControl" name="sdlo-PropertyControl" generic-name="PropertyControl" parent="VclComboBoxText" icon-name="widget-gtk-comboboxtext"/>
+
+    <glade-widget-class title="NumFormatListBox" name="swlo-NumFormatListBox" generic-name="NumFormatListBox" parent="VclComboBoxText" icon-name="widget-gtk-comboboxtext"/>
+
+    <glade-widget-class title="Language ListBox" name="svxcorelo-SvxLanguageBox" generic-name="LanguageBox" parent="VclComboBoxText" icon-name="widget-gtk-combobox"/>
+
+    <glade-widget-class title="Language ComboBox" name="svxcorelo-SvxLanguageComboBox" generic-name="LanguageComboBox" parent="VclComboBoxText" icon-name="widget-gtk-comboboxtext"/>
+
+    <glade-widget-class title="Reference Button" name="foruilo-RefButton" generic-name="Reference Button" parent="GtkButton" icon-name="widget-gtk-button"/>
+
+    <glade-widget-class title="Extended Reference Button" name="scuilo-ScRefButtonEx" generic-name="Extended Reference Button" parent="foruilo-RefButton" icon-name="widget-gtk-button"/>
+
+    <glade-widget-class title="Reference Edit" name="foruilo-RefEdit" generic-name="Reference Edit" parent="GtkEntry" icon-name="widget-gtk-textentry"/>
+    <glade-widget-class title="Edit" name="foruilo-ArgEdit" generic-name="Edit" parent="GtkEntry" icon-name="widget-gtk-textentry"/>
+    <glade-widget-class title="Edit Box" name="foruilo-EditBox" generic-name="Edit Box" parent="GtkTextView" icon-name="widget-gtk-textview"/>
+
+    <glade-widget-class title="URL Entry" name="cuilo-SvxHyperURLBox" generic-name="URL Entry" parent="GtkEntry" icon-name="widget-gtk-textentry"/>
+
+    <glade-widget-class title="Another NoSpace Edit" name="cuilo-SvxNoSpaceEdit" generic-name="Another NoSpace Edit" parent="GtkEntry" icon-name="widget-gtk-textentry">
+      <properties>
+        <property save="True" query="False" id="only-numeric" default="False" name="Allow only numbers">
+          <parameter-spec>
+            <type>GParamBoolean</type>
+          </parameter-spec>
+        </property>
+      </properties>
+    </glade-widget-class>
+
+    <glade-widget-class title="Double Field" name="scuilo-ScDoubleField" generic-name="Double Field" parent="GtkEntry" icon-name="widget-gtk-textentry"/>
+
+    <glade-widget-class title="Cursor Reference Edit" name="sclo-ScCursorRefEdit" generic-name="Cursor Reference Edit" parent="foruilo-RefEdit" icon-name="widget-gtk-textentry"/>
+
+    <glade-widget-class title="Condition Edit" name="swlo-ConditionEdit" generic-name="Condition Edit" parent="GtkEntry" icon-name="widget-gtk-textentry"/>
+
+    <glade-widget-class title="Return Action Edit" name="swlo-ReturnActionEdit" generic-name="Return Action Edit" parent="GtkEntry" icon-name="widget-gtk-textentry"/>
+
+    <glade-widget-class title="Text View" name="sclo-ScEditWindow" generic-name="Text View" parent="GtkTextView" icon-name="widget-gtk-textentry"/>
+
+    <glade-widget-class title="Combo Image Button" name="sclo-ScExtIButton" generic-name="Combo Image Button" parent="GtkButton" icon-name="widget-gtk-button"/>
+
+    <glade-widget-class title="Open Document ListBox" name="dbulo-OpenDocumentListBox" generic-name="Open Document ListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox"/>
+                        
+    <glade-widget-class title="Fill Type ListBox" name="svxlo-SvxFillTypeBox" generic-name="Fill Type ListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox"/>
+
+    <glade-widget-class title="Fill Attr ListBox" name="svxlo-SvxFillAttrBox" generic-name="Fill Attr ListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox"/>
+
+    <glade-widget-class title="Page Size ListBox" name="svxcorelo-PaperSizeListBox" generic-name="Page Size ListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox"/>
+
+    <glade-widget-class title="Page Numbering ListBox" name="svxcorelo-PageNumberListBox" generic-name="Page Numbering ListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox"/>
+
+    <glade-widget-class title="Spacing Preset ListBox" name="svxcorelo-SpacingListBox" generic-name="Spacing Preset ListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox"/>
+
+    <glade-widget-class title="Same Content Preset ListBox" name="svxcorelo-SameContentListBox" generic-name="Same Content Preset ListBox" parent="GtkComboBox" icon-name="widget-gtk-combobox"/>
+
+    <glade-widget-class title="Open Document Button" name="dbulo-OpenDocumentButton" generic-name="Open Document Button" parent="GtkButton" icon-name="widget-gtk-button"/>
+
+    <glade-widget-class title="Relation Control" name="dbulo-ORelationControl" generic-name="Relation Control" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+
+    <glade-widget-class title="Sidebar ToolBox" name="sfxlo-SidebarToolBox" generic-name="Sidebar ToolBox" parent="GtkToolbar" icon-name="widget-gtk-toolbar">
+        <properties>
+            <!-- Must override the default value of "icon-size", so "Large Toolbar" will be saved into .ui -->
+            <property id="icon-size" optional-default="False" optional="True" default="GTK_ICON_SIZE_BUTTON"/>
+        </properties>
+    </glade-widget-class>
+
+    <glade-widget-class title="Writer Navigator ToolBox" name="swlo-SwNavHelpToolBox" generic-name="Writer Navigator ToolBox" parent="GtkToolbar" icon-name="widget-gtk-toolbar"/>
+
+    <glade-widget-class title="Tab Stop Images" name="cuilo-TabWin_Impl" generic-name="TabWin_Impl" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+
+    <glade-widget-class title="BmpWindow" name="swuilo-BmpWindow" generic-name="BmpWindow" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+
+    <glade-widget-class title="ClientBox" name="sduilo-ClientBox" generic-name="ClientBox" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+
+    <glade-widget-class title="CropExample" name="cuilo-SvxCropExample" generic-name="CropExample" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+
+    <glade-widget-class title="ScCondFormatList" name="sclo-ScCondFormatList" generic-name="CondFormatList" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+
+    <glade-widget-class title="ScDPFunctionListBox" name="scuilo-ScDPFunctionListBox" generic-name="DPFunctionListBox" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+
+    <glade-widget-class title="OTableTreeListBox" name="dbulo-OTableTreeListBox" generic-name="OTableTreeListBox" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+
+    <glade-widget-class title="IndexFieldsControl" name="dbulo-DbaIndexFieldsControl" generic-name="IndexFieldsControl" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="DbaIndexList" name="dbulo-DbaIndexList" generic-name="DbaIndexList" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="ColumnTreeBox" name="dbulo-OColumnTreeBox" generic-name="ColumnTreeBox" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="TypeSelectList" name="dbulo-OWizTypeSelectList" generic-name="TypeSelectList" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+
+    <glade-widget-class title="Icon Choice Control" name="cuilo-SvtIconChoiceCtrl" generic-name="Icon Choice Control" parent="GtkIconView" icon-name="widget-gtk-iconview"/>
+
+    <glade-widget-class title="Recent Documents View" name="sfxlo-RecentDocsView" generic-name="Icon View" parent="GtkIconView" icon-name="widget-gtk-iconview"/>
+    <glade-widget-class title="Emoji View" name="sfxlo-EmojiView" generic-name="Template Icon View" parent="GtkIconView" icon-name="widget-gtk-iconview"/>
+    <glade-widget-class title="Template Thumbnail View" name="sfxlo-TemplateDefaultView" generic-name="Template Icon View" parent="GtkIconView" icon-name="widget-gtk-iconview"/>
+    <glade-widget-class title="Template Search View" name="sfxlo-TemplateSearchView" generic-name="Template Icon View" parent="GtkIconView" icon-name="widget-gtk-iconview"/>
+
+    <glade-widget-class title="Driver List Control" name="cuilo-DriverListControl" generic-name="DriverListControl" parent="GtkEntry" icon-name="widget-gtk-combobox"/>
+
+    <glade-widget-class title="Formula ListBox" name="foruilo-FormulaListBox" generic-name="Formula ListBox" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+    <glade-widget-class title="Formula ListBox" name="foruilo-StructListBox" generic-name="Formula ListBox" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+
+    <glade-widget-class title="Statusbar" name="svxlo-StatusBar" generic-name="Statusbar" parent="GtkStatusbar" icon-name="widget-gtk-statusbar"/>
+    <glade-widget-class title="DataTreeListBox" name="svxcorelo-DataTreeListBox" generic-name="DataTreeListBox" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+
+    <glade-widget-class title="Suggestion Edit" name="cuilo-SuggestionEdit" generic-name="SuggestionEdit" parent="GtkEntry" icon-name="widget-gtk-textentry"/>
+    <glade-widget-class title="Suggestion Display" name="cuilo-SuggestionDisplay" generic-name="SuggestionDisplay" parent="GtkTextView" icon-name="widget-gtk-textview"/>
+    <glade-widget-class title="Ruby RadioButton" name="cuilo-RubyRadioButton" generic-name="RubyRadioButton" parent="GtkRadioButton" icon-name="widget-gtk-radiobutton"/>
+    <glade-widget-class title="Show Text" name="cuilo-SvxShowText" generic-name="ShowText" parent="GtkDrawingArea" icon-name="widget-gtk-drawingarea"/>
+    <glade-widget-class title="Notebook switching tabs depending on context" name="sfxlo-NotebookbarTabControl" generic-name="NotebookbarTabControl" parent="GtkNotebook" icon-name="widget-gtk-notebook"/>
+    <glade-widget-class title="Slide Transition Pane" name="sdlo-SlideTransitionBox" generic-name="ShowText" parent="GtkToolButton" icon-name="widget-gtk-toolbutton"/>
+    <glade-widget-class title="Button with small padding" name="vcllo-SmallButton" generic-name="SmallButton" parent="GtkButton" icon-name="widget-gtk-button"/>
+    <glade-widget-class title="Horizontal box hiding children depending on its priorities" name="sfxlo-PriorityHBox" generic-name="PriorityHBox" parent="GtkBox" icon-name="widget-gtk-box"/>
+    <glade-widget-class title="Table Design Control" name="sdlo-TableDesignBox" generic-name="TableDesignBox" parent="GtkImage" icon-name="widget-gtk-image"/>
+    <glade-widget-class title="Animation" name="sdlo-CustomAnimationBox" generic-name="CustomAnimationBox" parent="GtkImage" icon-name="widget-gtk-image"/>
+    <glade-widget-class title="Box which can move own content to the popup" name="sfxlo-DropdownBox" generic-name="DropdownBox" parent="GtkBox" icon-name="widget-gtk-box"/>
+    <glade-widget-class title="Notebookbar ToolBox" name="sfxlo-NotebookbarToolBox" generic-name="Notebookbar ToolBox" parent="sfxlo-SidebarToolBox" icon-name="widget-gtk-toolbar"/>
+    <glade-widget-class title="Vertical box hiding children depending on context" name="sfxlo-ContextVBox" generic-name="ContextVBox" parent="GtkBox" icon-name="widget-gtk-box"/>
+    <glade-widget-class title="Managed Menu Button" name="svtlo-ManagedMenuButton" generic-name="ManagedMenuButton" parent="GtkButton" icon-name="widget-gtk-button"/>
+    <glade-widget-class title="Category ListBox" name="sdlo-CategoryListBox" generic-name="Category ListBox" parent="GtkTreeView" icon-name="widget-gtk-treeview"/>
+  </glade-widget-classes>
+
+  <glade-widget-group name="libreoffice" title="LibreOffice">
+    <glade-widget-class-ref name="sfxlo-BookmarksBox"/>
+    <glade-widget-class-ref name="sfxlo-IndexBox"/>
+    <glade-widget-class-ref name="sfxlo-SearchBox"/>
+    <glade-widget-class-ref name="sfxlo-SearchResultsBox"/>
+    <glade-widget-class-ref name="smlo-SmFontPickListBox"/>
+    <glade-widget-class-ref name="swuilo-SwAddressControlImpl"/>
+    <glade-widget-class-ref name="cuilo-ThesaurusAlternativesCtrl"/>
+    <glade-widget-class-ref name="cuilo-SentenceEditWindow"/>
+    <glade-widget-class-ref name="svxcorelo-HexColorControl"/>
+    <glade-widget-class-ref name="cuilo-ReplaceEdit"/>
+    <glade-widget-class-ref name="rptuilo-ConditionField"/>
+    <glade-widget-class-ref name="cuilo-HyphenEdit"/>
+    <glade-widget-class-ref name="dbulo-OSQLNameEdit"/>
+    <glade-widget-class-ref name="dbulo-CharSetListBox"/>
+    <glade-widget-class-ref name="dbulo-ConnectionURLEdit"/>
+    <glade-widget-class-ref name="VclComboBoxText"/>
+    <glade-widget-class-ref name="VclComboBoxNumeric"/>
+    <glade-widget-class-ref name="svxcorelo-SvxColorListBox"/>
+    <glade-widget-class-ref name="svxlo-GradientLB"/>
+    <glade-widget-class-ref name="svxlo-HatchingLB"/>
+    <glade-widget-class-ref name="svxlo-BitmapLB"/>
+    <glade-widget-class-ref name="svtlo-FontNameBox"/>
+    <glade-widget-class-ref name="svtlo-FontSizeBox"/>
+    <glade-widget-class-ref name="svxlo-LineEndLB"/>
+    <glade-widget-class-ref name="svxlo-LineLB"/>
+    <glade-widget-class-ref name="svtlo-LineListBox"/>
+    <glade-widget-class-ref name="svtlo-FontStyleBox"/>
+    <glade-widget-class-ref name="svxlo-SvxTextEncodingBox"/>
+    <glade-widget-class-ref name="dbulo-LimitBox"/>
+    <glade-widget-class-ref name="dbulo-OSQLNameComboBox"/>
+    <glade-widget-class-ref name="svxlo-SvxFontPrevWindow"/>
+    <glade-widget-class-ref name="scnlo-ScanPreview"/>
+    <glade-widget-class-ref name="scnlo-GridWindow"/>
+    <glade-widget-class-ref name="swuilo-SwTokenWindow"/>
+    <glade-widget-class-ref name="sfxlo-SfxPreviewWin"/>
+    <glade-widget-class-ref name="sfxlo-TemplateLocalView"/>
+    <glade-widget-class-ref name="swuilo-SwMarkPreview"/>
+    <glade-widget-class-ref name="smlo-SmShowSymbol"/>
+    <glade-widget-class-ref name="smlo-SmShowChar"/>
+    <glade-widget-class-ref name="svxcorelo-GalleryPreview"/>
+    <glade-widget-class-ref name="smlo-SmShowFont"/>
+    <glade-widget-class-ref name="smlo-SmShowSymbolSet"/>
+    <glade-widget-class-ref name="svxlo-SvxShowCharSet"/>
+    <glade-widget-class-ref name="cuilo-SvxNumberPreview"/>
+    <glade-widget-class-ref name="cuilo-GraphicPreviewWindow"/>
+    <glade-widget-class-ref name="cuilo-ColorFieldControl"/>
+    <glade-widget-class-ref name="cuilo-ColorSliderControl"/>
+    <glade-widget-class-ref name="cuilo-ColorPreviewControl"/>
+    <glade-widget-class-ref name="sduilo-SdHtmlAttrPreview"/>
+    <glade-widget-class-ref name="sdlo-SdDocPreviewWin"/>
+    <glade-widget-class-ref name="swuilo-NumberingPreview"/>
+    <glade-widget-class-ref name="cuilo-BackgroundPreview"/>
+    <glade-widget-class-ref name="svxlo-SvxXRectPreview"/>
+    <glade-widget-class-ref name="svxlo-SvxXLinePreview"/>
+    <glade-widget-class-ref name="svxlo-SvxXMeasurePreview"/>
+    <glade-widget-class-ref name="svxlo-SvxXConnectionPreview"/>
+    <glade-widget-class-ref name="svxlo-SvxXShadowPreview"/>
+    <glade-widget-class-ref name="svxlo-SvxPixelCtl"/>
+    <glade-widget-class-ref name="svxlo-SvxLightCtl3D"/>
+    <glade-widget-class-ref name="svxlo-Svx3DPreviewControl"/>
+    <glade-widget-class-ref name="svxlo-SvxFrameSelector"/>
+    <glade-widget-class-ref name="svtlo-MultiLineEditSyntaxHighlight"/>
+    <glade-widget-class-ref name="cuilo-AutoCompleteMultiListBox"/>
+    <glade-widget-class-ref name="svtlo-FormattedField"/>
+    <glade-widget-class-ref name="swuilo-AddressMultiLineEdit"/>
+    <glade-widget-class-ref name="cuilo-CuiCustomMultilineEdit"/>
+    <glade-widget-class-ref name="deploymentgui-LicenseView"/>
+    <glade-widget-class-ref name="svtlo-ValueSet"/>
+    <glade-widget-class-ref name="svtlo-ODocumentInfoPreview"/>
+    <glade-widget-class-ref name="svxcorelo-SvxColorValueSet"/>
+    <glade-widget-class-ref name="svxcorelo-SvxPresetListBox"/>
+    <glade-widget-class-ref name="swuilo-ColumnValueSet"/>
+    <glade-widget-class-ref name="sdlo-TableValueSet"/>
+    <glade-widget-class-ref name="scuilo-ScTabBgColorValueSet"/>
+    <glade-widget-class-ref name="sclo-ScCsvTableBox"/>
+    <glade-widget-class-ref name="svtlo-SvSimpleTableContainer"/>
+    <glade-widget-class-ref name="svtlo-SvtFileView"/>
+    <glade-widget-class-ref name="svxcorelo-SvxCheckListBox"/>
+    <glade-widget-class-ref name="swlo-SwDBTreeList"/>
+    <glade-widget-class-ref name="cuilo-MacroEventListBox"/>
+    <glade-widget-class-ref name="cuilo-SfxConfigGroupListBox"/>
+    <glade-widget-class-ref name="cuilo-SfxAccCfgTabListBox"/>
+    <glade-widget-class-ref name="cuilo-SfxConfigFunctionListBox"/>
+    <glade-widget-class-ref name="svxlo-SvxParaPrevWindow"/>
+    <glade-widget-class-ref name="svxlo-SvxPageWindow"/>
+    <glade-widget-class-ref name="swlo-SwPageGridExample"/>
+    <glade-widget-class-ref name="swlo-SwColExample"/>
+    <glade-widget-class-ref name="swlo-SwColumnOnlyExample"/>
+    <glade-widget-class-ref name="swuilo-AutoFmtPreview"/>
+    <glade-widget-class-ref name="sclo-ScAutoFmtPreview"/>
+    <glade-widget-class-ref name="swuilo-SwCaptionPreview"/>
+    <glade-widget-class-ref name="swuilo-SwDropCapsPict"/>
+    <glade-widget-class-ref name="deploymentgui-ExtensionBox"/>
+    <glade-widget-class-ref name="deploymentgui-ExtBoxWithBtns"/>
+    <glade-widget-class-ref name="xsltdlglo-SvxPathControl"/>
+    <glade-widget-class-ref name="svxlo-RubyPreview"/>
+    <glade-widget-class-ref name="vcllo-PrintPreviewWindow"/>
+    <glade-widget-class-ref name="vcllo-ShowNupOrderWindow"/>
+    <glade-widget-class-ref name="swuilo-SwLabPreview"/>
+    <glade-widget-class-ref name="swuilo-SwEnvPreview"/>
+    <glade-widget-class-ref name="svxlo-SvxSwFrameExample"/>
+    <glade-widget-class-ref name="sduilo-PresLayoutPreview"/>
+    <glade-widget-class-ref name="swlo-SwAddressPreview"/>
+    <glade-widget-class-ref name="swuilo-SwAssignFieldsControl"/>
+    <glade-widget-class-ref name="svxlo-SvxRectCtl"/>
+    <glade-widget-class-ref name="cuilo-EmbossControl"/>
+    <glade-widget-class-ref name="svxlo-GraphCtrl"/>
+    <glade-widget-class-ref name="svxlo-FrameDirectionListBox"/>
+    <glade-widget-class-ref name="chartcontrollerlo-TextDirectionListBox"/>
+    <glade-widget-class-ref name="chartcontrollerlo-LightButton"/>
+    <glade-widget-class-ref name="swlo-SwNumberingTypeListBox"/>
+    <glade-widget-class-ref name="swuilo-BookmarkCombo"/>
+    <glade-widget-class-ref name="swuilo-FEdit"/>
+    <glade-widget-class-ref name="svxlo-RubyEdit"/>
+    <glade-widget-class-ref name="cuilo-SvxDictEdit"/>
+    <glade-widget-class-ref name="cuilo-AutoCorrEdit"/>
+    <glade-widget-class-ref name="swuilo-SwGlossaryGroupTLB"/>
+    <glade-widget-class-ref name="svxlo-SvxFontListBox"/>
+    <glade-widget-class-ref name="basctllo-TreeListBox"/>
+    <glade-widget-class-ref name="basctllo-ExtTreeListBox"/>
+    <glade-widget-class-ref name="svtlo-SvTreeListBox"/>
+    <glade-widget-class-ref name="chartcontrollerlo-SeriesListBox"/>
+    <glade-widget-class-ref name="cuilo-SvxHlmarkTreeLBox"/>
+    <glade-widget-class-ref name="sfxlo-ContentListBox"/>
+    <glade-widget-class-ref name="swuilo-DDListBox"/>
+    <glade-widget-class-ref name="sdlo-CustomAnimationList"/>
+    <glade-widget-class-ref name="svtlo-SvTabListBox"/>
+    <glade-widget-class-ref name="basctllo-CheckBox"/>
+    <glade-widget-class-ref name="swuilo-SwIdxTreeListBox"/>
+    <glade-widget-class-ref name="swuilo-SwFldRefTreeListBox"/>
+    <glade-widget-class-ref name="pcrlo-TabOrderListBox"/>
+    <glade-widget-class-ref name="sdlo-SdPageObjsTLB"/>
+    <glade-widget-class-ref name="sduilo-SdPageListControl"/>
+    <glade-widget-class-ref name="svxlo-SvxCheckListBox"/>
+    <glade-widget-class-ref name="swuilo-SwGlTreeListBox"/>
+    <glade-widget-class-ref name="sclo-ScPivotLayoutTreeList"/>
+    <glade-widget-class-ref name="sclo-ScPivotLayoutTreeListLabel"/>
+    <glade-widget-class-ref name="sclo-ScPivotLayoutTreeListData"/>
+    <glade-widget-class-ref name="svxlo-DialControl"/>
+    <glade-widget-class-ref name="svxlo-SidebarDialControl"/>
+    <glade-widget-class-ref name="svxlo-SvxRelativeField"/>
+    <glade-widget-class-ref name="sclo-RowEdit"/>
+    <glade-widget-class-ref name="sclo-ColumnEdit"/>
+    <glade-widget-class-ref name="svtlo-SvtURLBox"/>
+    <glade-widget-class-ref name="svtlo-OFileURLControl"/>
+    <glade-widget-class-ref name="swuilo-SelectionListBox"/>
+    <glade-widget-class-ref name="swuilo-CaptionComboBox"/>
+    <glade-widget-class-ref name="sdlo-PropertyControl"/>
+    <glade-widget-class-ref name="swlo-NumFormatListBox"/>
+    <glade-widget-class-ref name="svxcorelo-SvxLanguageBox"/>
+    <glade-widget-class-ref name="svxcorelo-SvxLanguageComboBox"/>
+    <glade-widget-class-ref name="foruilo-RefButton"/>
+    <glade-widget-class-ref name="scuilo-ScRefButtonEx"/>
+    <glade-widget-class-ref name="foruilo-RefEdit"/>
+    <glade-widget-class-ref name="foruilo-ArgEdit"/>
+    <glade-widget-class-ref name="foruilo-EditBox"/>
+    <glade-widget-class-ref name="cuilo-SvxHyperURLBox"/>
+    <glade-widget-class-ref name="cuilo-SvxNoSpaceEdit"/>
+    <glade-widget-class-ref name="scuilo-ScDoubleField"/>
+    <glade-widget-class-ref name="sclo-ScCursorRefEdit"/>
+    <glade-widget-class-ref name="swlo-ConditionEdit"/>
+    <glade-widget-class-ref name="swlo-ReturnActionEdit"/>
+    <glade-widget-class-ref name="sclo-ScEditWindow"/>
+    <glade-widget-class-ref name="sclo-ScExtIButton"/>
+    <glade-widget-class-ref name="dbulo-OpenDocumentListBox"/>
+    <glade-widget-class-ref name="svxlo-SvxFillTypeBox"/>
+    <glade-widget-class-ref name="svxlo-SvxFillAttrBox"/>
+    <glade-widget-class-ref name="svxcorelo-PaperSizeListBox"/>
+    <glade-widget-class-ref name="svxcorelo-PageNumberListBox"/>
+    <glade-widget-class-ref name="svxcorelo-SpacingListBox"/>
+    <glade-widget-class-ref name="svxcorelo-SameContentListBox"/>
+    <glade-widget-class-ref name="dbulo-OpenDocumentButton"/>
+    <glade-widget-class-ref name="dbulo-ORelationControl"/>
+    <glade-widget-class-ref name="sfxlo-SidebarToolBox"/>
+    <glade-widget-class-ref name="swlo-SwNavHelpToolBox"/>
+    <glade-widget-class-ref name="cuilo-TabWin_Impl"/>
+    <glade-widget-class-ref name="swuilo-BmpWindow"/>
+    <glade-widget-class-ref name="sduilo-ClientBox"/>
+    <glade-widget-class-ref name="cuilo-SvxCropExample"/>
+    <glade-widget-class-ref name="sclo-ScCondFormatList"/>
+    <glade-widget-class-ref name="scuilo-ScDPFunctionListBox"/>
+    <glade-widget-class-ref name="dbulo-OTableTreeListBox"/>
+    <glade-widget-class-ref name="dbulo-DbaIndexFieldsControl"/>
+    <glade-widget-class-ref name="dbulo-DbaIndexList"/>
+    <glade-widget-class-ref name="dbulo-OColumnTreeBox"/>
+    <glade-widget-class-ref name="dbulo-OWizTypeSelectList"/>
+    <glade-widget-class-ref name="cuilo-SvtIconChoiceCtrl"/>
+    <glade-widget-class-ref name="sfxlo-RecentDocsView"/>
+    <glade-widget-class-ref name="sfxlo-EmojiView"/>
+    <glade-widget-class-ref name="sfxlo-TemplateDefaultView"/>
+    <glade-widget-class-ref name="sfxlo-TemplateSearchView"/>
+    <glade-widget-class-ref name="cuilo-DriverListControl"/>
+    <glade-widget-class-ref name="foruilo-FormulaListBox"/>
+    <glade-widget-class-ref name="foruilo-StructListBox"/>
+    <glade-widget-class-ref name="svxlo-StatusBar"/>
+    <glade-widget-class-ref name="svxcorelo-DataTreeListBox"/>
+    <glade-widget-class-ref name="cuilo-SuggestionEdit"/>
+    <glade-widget-class-ref name="cuilo-SuggestionDisplay"/>
+    <glade-widget-class-ref name="cuilo-RubyRadioButton"/>
+    <glade-widget-class-ref name="cuilo-SvxShowText"/>
+    <glade-widget-class-ref name="sfxlo-NotebookbarTabControl"/>
+    <glade-widget-class-ref name="sdlo-SlideTransitionBox"/>
+    <glade-widget-class-ref name="vcllo-SmallButton"/>
+    <glade-widget-class-ref name="sfxlo-PriorityHBox"/>
+    <glade-widget-class-ref name="sdlo-TableDesignBox"/>
+    <glade-widget-class-ref name="sdlo-CustomAnimationBox"/>
+    <glade-widget-class-ref name="sfxlo-DropdownBox"/>
+    <glade-widget-class-ref name="sfxlo-NotebookbarToolBox"/>
+    <glade-widget-class-ref name="sfxlo-ContextVBox"/>
+    <glade-widget-class-ref name="svtlo-ManagedMenuButton"/>
+    <glade-widget-class-ref name="sdlo-CategoryListBox"/>
+  </glade-widget-group>
+</glade-catalog>
